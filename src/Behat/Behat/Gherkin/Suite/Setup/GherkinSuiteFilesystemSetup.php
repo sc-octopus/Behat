@@ -64,12 +64,8 @@ class GherkinSuiteFilesystemSetup implements SuiteSetup
      */
     public function setupSuite(Suite $suite)
     {
-        var_dump('cwd:', getcwd());
-        var_dump(exec('ls'));
         foreach ($suite->getFeatureLocators() as $locator) {
-            var_dump('locator:', $locator);
             if (0 !== strpos($locator, '@') && !is_dir($path = $this->locatePath($locator))) {
-                var_dump('create path:', $locator);
                 $this->createFeatureDirectory($path);
             }
         }
