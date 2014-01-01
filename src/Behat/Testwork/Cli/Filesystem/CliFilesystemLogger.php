@@ -49,6 +49,7 @@ class CliFilesystemLogger implements FilesystemLogger
      */
     public function directoryCreated($path, $reason)
     {
+        var_dump($path, $reason);
         $this->output->writeln(
             sprintf(
                 '<info>+d</info> %s <comment>- %s</comment>',
@@ -66,6 +67,7 @@ class CliFilesystemLogger implements FilesystemLogger
      */
     public function fileCreated($path, $reason)
     {
+        var_dump($path, $reason);
         $this->output->writeln(
             sprintf(
                 '<info>+f</info> %s <comment>- %s</comment>',
@@ -83,6 +85,7 @@ class CliFilesystemLogger implements FilesystemLogger
      */
     public function fileUpdated($path, $reason)
     {
+        var_dump($path, $reason);
         $this->output->writeln(
             sprintf(
                 '<info>u</info> %s <comment>- %s</comment>',
